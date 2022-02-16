@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    outline: black solid 1px;
+}
+
+
+.colors {
+    padding: 10px;
+    margin: 10px;
+}
