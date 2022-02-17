@@ -4,16 +4,124 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #9B1306;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+
+.middle-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-wrapper {
+    position: relative;
+    bottom: 80px;
+    display:flex ;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Atma', cursive;
+    font-weight: 700;
+    font-size: 56px;
+    margin-top: 20px;
+    color: #F6B900;
+}
+
+.title2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 54px;
+    font-weight: 400;
+    position: relative;
+    bottom: 50px;
+    z-index: -1;
+    color: white;
+}
+
+button {
+    width: 200px;
+    height: 60px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
 .container {
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
     outline: black solid 1px;
+    box-shadow: 4px 4px 5px 0px #00000040;
+
 }
 
-
 .colors {
-    padding: 10px;
-    margin: 10px;
+    margin: 10px 15px;
+    color: white;
+    font-family: 'Anton', sans-serif;
+    border:#F6B900 solid 4px;
+    background-color: #9B1306;
+    font-size: 26px;
+    border-radius: 11px;
+}
+
+.color-picker-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 830px;
+    position: relative;
+    left: 100px;
+    margin-top: 10px;
+}
+
+#color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 90px;
+    height: 90px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#color-picker::-webkit-color-swatch {
+    border-radius: 50% ;
+    border: none;
+    background-color: #ECFF3D;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.slider {
+    width: 400px;
+    border: 2px solid #E5E5E5
+}
+
+#range-number {
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
+    color: white;
+}
+.container{
+    background-color: white;
+}
+
+.credits {
+    text-align: center;
+    margin-top: 20px;
+    color: #F6B900B0;
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
 }

@@ -1,26 +1,18 @@
 const parentDiv = document.querySelector('.container');
-let askSize = prompt ('how many');
-let size = 800/askSize;
-let amount = askSize*askSize;
 const eraserButton = document.getElementById('white');
 const blackButton = document.getElementById('black');
 const randomButton = document.getElementById('rainbow');
-let colorSelection;
+const resetBoard = document.getElementById('reset');
+let colorPicker = document.getElementById('color-picker');
+let sizeValue = document.getElementById('value-slider')
+let label = document.getElementById('range-number');
+let askSize = 16; //deault value
+let size = 600/askSize;
+let amount = askSize*askSize;
 
-for (let grids = 0; grids < amount; grids++) {
-    eachGrids = document.createElement('div');
-    eachGrids.className = 'grid';
-    parentDiv.append(eachGrids);
-    eachGrids.style.width=`${size}px`;
-    eachGrids.style.height=`${size}px`;
-};
-
-const test = document.querySelectorAll('.grid');
-
+createGrids();
 
 eraserButton.addEventListener('click', () => {
-    colorSelection = 'white'
-    console.log (colorSelection);
     for (let i = 0; i < test.length; i++) {
         test[i].addEventListener('mouseover', () => {
             test[i].style.backgroundColor = 'white';
@@ -30,12 +22,9 @@ eraserButton.addEventListener('click', () => {
 });
 
 blackButton.addEventListener('click', () => {
-    colorSelection = 'black'
-    console.log (colorSelection);
     for (let i = 0; i < test.length; i++) {
         test[i].addEventListener('mouseover', () => {
             test[i].style.backgroundColor = 'black';
-            console.log (colorSelection);
         });
     };
 })
@@ -47,11 +36,51 @@ randomButton.addEventListener('click', () => {
             var color = '#';
             for (var j = 0; j < 6; j++) {
               color += letters[Math.floor(Math.random() * 16)];
-            colorSelection = color.toString();
+            test[i].style.backgroundColor = color.toString();
         };
-        test[i].style.backgroundColor = colorSelection;
     })
 }
        
 });
-//check I value if mao ba ang sayop
+
+colorPicker.addEventListener('change', (e) => {
+    for (let i = 0; i < test.length; i++) {
+        test[i].addEventListener('mouseover', () => {
+            test[i].style.backgroundColor = e.target.value;
+        });
+    };
+   
+});
+
+resetBoard.addEventListener('click', () => {
+    for (let i = 0; i < test.length; i++) {
+        test[i].style.backgroundColor = 'white';
+    };
+});
+
+function removeGrids (){
+    parentDiv.innerHTML ='';
+}
+
+function createGrids (){
+    for (grids = 0; grids < amount; grids++) {
+        eachGrids = document.createElement('div');
+        eachGrids.className = 'grid';
+        parentDiv.appendChild(eachGrids);
+        eachGrids.style.width=`${size}px`;
+        eachGrids.style.height=`${size}px`;
+    };
+}
+
+sizeValue.addEventListener('change', (e)=>{
+    askSize = e.target.value;
+    amount = askSize*askSize;
+    size = 600/askSize;
+    removeGrids();
+    createGrids();
+    test = document.querySelectorAll('.grid');
+});
+
+sizeValue.addEventListener('mousemove', (e)=>{label.innerText = e.target.value + "x" + e.target.value});
+
+let test = document.querySelectorAll('.grid');
