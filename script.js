@@ -69,6 +69,16 @@ resetBoard.addEventListener('click', () => {
     for (let i = 0; i < test.length; i++) {
         test[i].style.backgroundColor = 'white';
     };
+    for (let k = 0; k < buttons.length; k++) {
+        buttons[k].removeAttribute('id');
+    }
+    for (let i = 0; i < test.length; i++) {
+        test[i].addEventListener('mouseover', () => {
+            test[i].style.backgroundColor = 'white';
+            
+        });
+    };
+    
 });
 
 function removeGrids (){
@@ -92,6 +102,15 @@ sizeValue.addEventListener('change', (e)=>{
     removeGrids();
     createGrids();
     test = document.querySelectorAll('.grid');
+    for (let k = 0; k < buttons.length; k++) {
+        buttons[k].removeAttribute('id');
+    }
+    for (let i = 0; i < test.length; i++) {
+        test[i].addEventListener('mouseover', () => {
+            test[i].style.backgroundColor = 'white';
+            
+        });
+    };
 });
 
 sizeValue.addEventListener('mousemove', (e)=>{label.innerText = e.target.value + "x" + e.target.value});
