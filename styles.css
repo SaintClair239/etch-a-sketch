@@ -48,10 +48,11 @@ body {
     color: white;
 }
 
-button {
-    width: 200px;
-    height: 60px;
-    box-shadow: 0px 4px 4px 0px #00000040;
+button:hover {
+    background-color: white;
+    border: white;
+    color: #F6B900;
+    transition-timing-function: ease-in-out;
 }
 
 .container {
@@ -71,7 +72,10 @@ button {
     border:#F6B900 solid 4px;
     background-color: #9B1306;
     font-size: 26px;
-    border-radius: 11px;
+    border-radius: 15px;
+    width: 200px;
+    height: 60px;
+    box-shadow: 0px 4px 4px 0px #00000040;
 }
 
 .color-picker-wrapper {
@@ -125,3 +129,11 @@ button {
     font-family: 'Anton', sans-serif;
     font-size: 26px;
 }
+
+#black, #white, #rainbow {
+    background-color: white;
+    border: white;
+    color: #F6B900;
+}
+
+

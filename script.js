@@ -1,8 +1,9 @@
 const parentDiv = document.querySelector('.container');
-const eraserButton = document.getElementById('white');
-const blackButton = document.getElementById('black');
-const randomButton = document.getElementById('rainbow');
+const eraserButton = document.querySelector('.white');
+const blackButton = document.querySelector('.black');
+const randomButton = document.querySelector('.rainbow');
 const resetBoard = document.getElementById('reset');
+const buttons = [eraserButton, blackButton, randomButton];
 let colorPicker = document.getElementById('color-picker');
 let sizeValue = document.getElementById('value-slider')
 let label = document.getElementById('range-number');
@@ -19,6 +20,10 @@ eraserButton.addEventListener('click', () => {
             
         });
     };
+    for (let j = 0; j < buttons.length; j++) {
+        buttons[j].removeAttribute('id')
+    }
+    eraserButton.setAttribute('id', 'white')
 });
 
 blackButton.addEventListener('click', () => {
@@ -27,6 +32,10 @@ blackButton.addEventListener('click', () => {
             test[i].style.backgroundColor = 'black';
         });
     };
+    for (let j = 0; j < buttons.length; j++) {
+        buttons[j].removeAttribute('id')
+    }
+    blackButton.setAttribute('id', 'black')
 })
 
 randomButton.addEventListener('click', () => {
@@ -39,6 +48,10 @@ randomButton.addEventListener('click', () => {
             test[i].style.backgroundColor = color.toString();
         };
     })
+    for (let j = 0; j < buttons.length; j++) {
+        buttons[j].removeAttribute('id')
+    }
+    randomButton.setAttribute('id', 'rainbow')
 }
        
 });
